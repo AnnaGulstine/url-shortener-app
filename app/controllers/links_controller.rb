@@ -14,6 +14,10 @@ class LinksController < ApplicationController
       target_url: params[:target_url]
     )
     @link.standardize_target_url!
-    redirect_to "/"    
+    if @link.save
+      redirect_to "/"
+    else
+      render "/links/new"
+    end
   end
 end
