@@ -25,6 +25,21 @@ class LinksController < ApplicationController
     @link = Link.find_by(id: params[:id])
   end
 
+  def edit
+    @link = Link.find_by(id: params[:id])
+  end
+
+  def update
+    @link = Link.find_by(id: params[:id])
+    @link.update(
+      user_id: params[:user_id],
+      slug: params[:slug],
+      target_url: params[:target_url]
+    )
+    flash[:success] = "Link successfully updated!"
+    redirect_to "/links/#{@link.id}"
+  end  
+
   def destroy
     @link = Link.find_by(:id => params[:id], :user_id => current_user.id)
 
