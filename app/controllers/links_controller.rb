@@ -20,4 +20,19 @@ class LinksController < ApplicationController
       render "/links/new"
     end
   end
+
+  def show
+    @link = Link.find_by(id: params[:id])
+  end
+
+  def destroy
+    @link = Link.find_by(:id => params[:id], :user_id => current_user.id)
+
+    if @link && @link.destroy
+      flash[:success] = "Link destroyed successfully"
+    else
+      flash[:warning] = "Unsuccessful"
+    end
+    redirect_to "/"
+  end
 end
