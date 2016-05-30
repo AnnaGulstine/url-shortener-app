@@ -4,6 +4,7 @@ class LinksController < ApplicationController
   end
 
   def new
+    @link = Link.new
   end
 
   def create
@@ -12,6 +13,7 @@ class LinksController < ApplicationController
       slug: params[:slug],
       target_url: params[:target_url]
     )
+    @link.standardize_target_url!
     redirect_to "/"    
   end
 end
