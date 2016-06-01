@@ -42,7 +42,7 @@ class LinksController < ApplicationController
     @link = Link.find_by(:id => params[:id])
 
     if @link && @link.destroy
-      flash[:success] = "Link destroyed successfully"
+      flash[:success] = "Link deleted successfully!"
     else
       flash[:warning] = "Unsuccessful"
     end
