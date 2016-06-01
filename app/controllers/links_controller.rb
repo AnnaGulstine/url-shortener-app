@@ -9,7 +9,6 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.create(   
-      user_id: params[:user_id],
       slug: params[:slug],
       target_url: params[:target_url]
     )
@@ -32,7 +31,6 @@ class LinksController < ApplicationController
   def update
     @link = Link.find_by(id: params[:id])
     @link.update(
-      user_id: params[:user_id],
       slug: params[:slug],
       target_url: params[:target_url]
     )
@@ -41,7 +39,7 @@ class LinksController < ApplicationController
   end  
 
   def destroy
-    @link = Link.find_by(:id => params[:id], :user_id => current_user.id)
+    @link = Link.find_by(:id => params[:id])
 
     if @link && @link.destroy
       flash[:success] = "Link destroyed successfully"
