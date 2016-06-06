@@ -13,4 +13,13 @@ class Link < ActiveRecord::Base
   def visit_count
     visits.count
   end
+
+  def slug_generator
+    random_array = [('0'..'9')].map{ |i| i.to_a }
+    numbers = random_array.flatten
+    numbers_array = []
+    5.times do
+      numbers_array << numbers.sample
+    end
+  end
 end

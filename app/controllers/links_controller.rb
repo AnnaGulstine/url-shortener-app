@@ -14,7 +14,7 @@ class LinksController < ApplicationController
     )
     @link.standardize_target_url!
     if @link.save
-      redirect_to "/"
+      redirect_to "/links/#{@link.id}"
     else
       render "/links/new"
     end
