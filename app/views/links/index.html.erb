@@ -7,7 +7,10 @@
       <%= form_tag '/links', method: :post do %>  
       <div>
         <%= text_field_tag :target_url, "", :placeholder => "Target URL", :class => "form-control textFieldTag" %>  
-      </div>  
+      </div> 
+      <div>
+        <%= text_field_tag :slug, "", :placeholder => "Slug", :class => "form-control textFieldTag" %>  
+      </div>        
       <div id="buttonDiv">
         <%= submit_tag 'Create Link', class: "btn btn-default" %>
       </div>
