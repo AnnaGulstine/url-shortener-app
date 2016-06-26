@@ -3,13 +3,13 @@
   <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
-      <h1 class="centeredTitle">Enter URL Here</h1>
+      <h1 class="centeredTitle largeMarginTop">Enter URL Here</h1>
       <%= form_tag '/links', method: :post do %>  
       <div>
         <%= text_field_tag :target_url, "", :placeholder => "Target URL", :class => "form-control textFieldTag" %>  
       </div> 
       <div>
-        <h3>Optional - Choose your Slug.</h3>
+        <h3 class="centeredTitle smallMarginTop">Optional - Choose your Slug.</h3>
         <%= text_field_tag :slug, "", :placeholder => "Slug", :class => "form-control textFieldTag" %>  
       </div>        
       <div id="buttonDiv">
@@ -18,27 +18,6 @@
       <% end %>
     </div>
     <div class="col-sm-3"></div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-sm-12">
-    <h3 class="centeredTitle">Previous Links</h3>
-      <table class="table">
-        <th>Slug</th>
-        <th>Target URL</th>
-        <th>Created At</th>
-        <th>Actions</th>
-        <% @links.each do |link| %>
-          <tr>
-            <td><%= link_to link.slug, "/#{link.slug}", :method => "get", :class => "block-link" %></td>
-            <td><%= link.target_url %></td>
-            <td><%= link.created_at %></td>
-            <td><%= link_to "Edit", "/links/#{link.id}/edit" %>  <%= link_to "Delete", "/links/#{link.id}", :method => "delete", :data => {:confirm => "Are you sure you would like to delete the link: #{link.slug}?"} %></td>
-          </tr>
-        <% end %>
-      </table>
-    </div>
   </div>
 
 </div>
