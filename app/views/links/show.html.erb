@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Your shortened link:</h1>
-  <h3><a href="http://alink.herokuapp.com/#{@link.slug}">http://alink.herokuapp.com/<%= @link.slug %></a></h3>
+  <h3><a href="http://alink.herokuapp.com/<%= link.slug %>">http://alink.herokuapp.com/<%= @link.slug %></a></h3>
   <h1>Link Stats for <%= @link.slug%></h1>
   <h3>Visits: <%= @link.visit_count %></h3>
 </div>
