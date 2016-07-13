@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Your shortened link:</h1>
-  <h3 id="newLink"><a href="http://alink.herokuapp.com/<%= @link.slug %>">http://alink.herokuapp.com/<%= @link.slug %></a></h3>
-  <h1>Link Stats for <%= @link.slug%></h1>
-  <h3>Visits: <%= @link.visit_count %></h3>
+  <h1 class="centeredTitle largeMarginTop">Your shortened link:</h1>
+  <h3 class="centeredTitle"><a href="http://alink.herokuapp.com/<%= @link.slug %>" id="newLink">http://alink.herokuapp.com/<%= @link.slug %></a></h3>
+  <h1 class="centeredTitle">Link Stats for <%= @link.slug%></h1>
+  <h3 class="centeredTitle">Visits: <%= @link.visit_count %></h3>
 </div>
